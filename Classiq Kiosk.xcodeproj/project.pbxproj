@@ -16,6 +16,7 @@
 		A7849AD92A3C318000EC1F5E /* Classiq_KioskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7849AD82A3C318000EC1F5E /* Classiq_KioskUITestsLaunchTests.swift */; };
 		A7849AE62A3C3B2100EC1F5E /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A7849AE52A3C3B2100EC1F5E /* video.mp4 */; };
 		A7849AEA2A3C48FB00EC1F5E /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7849AE92A3C48FB00EC1F5E /* VideoPlayerView.swift */; };
+		A7849AEE2A3C956B00EC1F5E /* VideoPlayerURLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7849AED2A3C956B00EC1F5E /* VideoPlayerURLView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		A7849AD82A3C318000EC1F5E /* Classiq_KioskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classiq_KioskUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A7849AE52A3C3B2100EC1F5E /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video.mp4; path = ../../video.mp4; sourceTree = "<group>"; };
 		A7849AE92A3C48FB00EC1F5E /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		A7849AED2A3C956B00EC1F5E /* VideoPlayerURLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerURLView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				A7849AE52A3C3B2100EC1F5E /* video.mp4 */,
 				A7849ABA2A3C317E00EC1F5E /* Classiq_KioskApp.swift */,
 				A7849ABC2A3C317E00EC1F5E /* MainView.swift */,
+				A7849AED2A3C956B00EC1F5E /* VideoPlayerURLView.swift */,
 				A7849ABE2A3C318000EC1F5E /* Assets.xcassets */,
 				A7849AC02A3C318000EC1F5E /* Classiq_Kiosk.entitlements */,
 				A7849AC12A3C318000EC1F5E /* Preview Content */,
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7849ABD2A3C317E00EC1F5E /* MainView.swift in Sources */,
+				A7849AEE2A3C956B00EC1F5E /* VideoPlayerURLView.swift in Sources */,
 				A7849ABB2A3C317E00EC1F5E /* Classiq_KioskApp.swift in Sources */,
 				A7849AEA2A3C48FB00EC1F5E /* VideoPlayerView.swift in Sources */,
 			);
@@ -433,7 +437,7 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
@@ -469,7 +473,7 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";

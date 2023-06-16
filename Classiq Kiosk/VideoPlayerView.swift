@@ -4,16 +4,19 @@ import AVKit
 struct VideoPlayerView: View {
     @Environment(\.presentationMode) var presentationMode
     
-    private var player: AVPlayer
+    private var player: AVQueuePlayer
+    private var playerLooper: AVPlayerLooper?
     
     init() {
         guard let videoURL = Bundle.main.url(forResource: "video", withExtension: "mp4") else {
             fatalError("Video file not found")
         }
         
-        player = AVPlayer(url: videoURL)
-        player.isMuted = true
+        player = AVQueuePlayer()
+        let playerItem = AVPlayerItem(url: videoURL)
+        playerLooper = AVPlayerLooper(player: player, templateItem: playerItem)
         player.play()
+        player.isMuted = true
         player.allowsExternalPlayback = false
     }
     
@@ -27,20 +30,13 @@ struct VideoPlayerView: View {
                     player.pause()
                 }
                 .edgesIgnoringSafeArea(.all)
-                .aspectRatio(contentMode: .fit)
-            
-            // Overlay view to disable video player controls
-            Color.clear
-                .edgesIgnoringSafeArea(.all)
-                .onTapGesture {}
-                .onLongPressGesture {}
-                .gesture(DragGesture().onEnded { value in
-                    if value.translation.width > 100 {
-                        presentationMode.wrappedValue.dismiss()
-                    }
-                })
-                .allowsHitTesting(false)
+                .aspectRatio(contentMode: .fill)
         }
+        .gesture(DragGesture().onEnded { value in
+            if value.translation.width > 100 {
+                presentationMode.wrappedValue.dismiss()
+            }
+        })
     }
 }
 
