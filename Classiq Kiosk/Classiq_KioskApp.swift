@@ -11,7 +11,7 @@ import SwiftUI
 struct Classiq_KioskApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            VideoPlayerView()
         }
     }
 }
