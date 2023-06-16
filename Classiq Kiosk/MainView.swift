@@ -8,69 +8,68 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var selection: Int? = 0
+    @State private var showVideoPlayerView = false
     
     var body: some View {
-        ZStack {
-            Color(red: 0.1, green: 0.1, blue: 0.1)
-                .edgesIgnoringSafeArea(.all)
-            
-            NavigationLink(destination: VideoPlayerView().navigationBarHidden(true), tag: 1, selection: $selection) {
-                EmptyView()
-            }
+        NavigationView {
+            ZStack {
+                Color(red: 0.1, green: 0.1, blue: 0.1)
+                    .edgesIgnoringSafeArea(.all)
+                
 
-            VStack {
-                GeometryReader { geometry in
-                    VStack {
-                        Spacer()
-                        Button(action: {
-                            self.selection = 1
-                            print("here-----")
+                VStack {
+                    GeometryReader { geometry in
+                        VStack {
+                            Spacer()
+                            Button(action: {
+                                showVideoPlayerView = true
+                            }) {
+                                Image("Logo")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: geometry.size.width * 0.6)
+                                    .foregroundColor(.accentColor)
+                            }
+                            NavigationLink("", destination:  VideoPlayerView(), isActive: $showVideoPlayerView)
                             
-                        }) {
-                            Image("Logo")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: geometry.size.width * 0.6)
-                                .foregroundColor(.accentColor)
-                        }
-                        
-                        
-                        Text("Quantum Computing Software")
-                            .font(.system(size: 26))
-                            .foregroundColor(.white)
-                        
-                        HStack {
-                            Spacer()
-                            SquareView(size: geometry.size.width * 0.2)
-                                .padding(.horizontal, 8)
-                            SquareView(size: geometry.size.width * 0.2)
-                                .padding(.horizontal, 8)
-                            SquareView(size: geometry.size.width * 0.2)
-                                .padding(.horizontal, 8)
-                            Spacer()
-                        }
-                        .padding(.top, 16)
-                        
-                        HStack {
-                            Spacer()
-                            SquareView(size: geometry.size.width * 0.2)
-                                .padding(.horizontal, 8)
-                            SquareView(size: geometry.size.width * 0.2)
-                                .padding(.horizontal, 8)
-                            SquareView(size: geometry.size.width * 0.2)
-                                .padding(.horizontal, 8)
+                            
+                            Text("Quantum Computing Software")
+                                                        .font(.system(size: 26))
+                                                        .foregroundColor(.white)
+                                                    
+                                                    HStack {
+                                                        Spacer()
+                                                        SquareView(size: geometry.size.width * 0.2)
+                                                            .padding(.horizontal, 8)
+                                                        SquareView(size: geometry.size.width * 0.2)
+                                                            .padding(.horizontal, 8)
+                                                        SquareView(size: geometry.size.width * 0.2)
+                                                            .padding(.horizontal, 8)
+                                                        Spacer()
+                                                    }
+                                                    .padding(.top, 16)
+                                                    
+                                                    HStack {
+                                                        Spacer()
+                                                        SquareView(size: geometry.size.width * 0.2)
+                                                            .padding(.horizontal, 8)
+                                                        SquareView(size: geometry.size.width * 0.2)
+                                                            .padding(.horizontal, 8)
+                                                        SquareView(size: geometry.size.width * 0.2)
+                                                            .padding(.horizontal, 8)
+                                                        Spacer()
+                                                    }
+                                                    .padding(.top, 16)
+                            
+                            
                             Spacer()
                         }
-                        .padding(.top, 16)
-                        
-                        Spacer()
+                        .frame(width: geometry.size.width)
+                        .padding()
                     }
-                    .frame(width: geometry.size.width)
-                    .padding()
                 }
+                .padding()
             }
-            .padding()
         }
     }
 }
